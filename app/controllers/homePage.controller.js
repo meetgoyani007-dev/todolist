@@ -52,7 +52,7 @@ exports.create = (req, res) => {
     });
 };
 
-exports.findOne = (req, res) => {
+exports.findOneHome = (req, res) => {
   const id = req.params.id;
 
   homePage

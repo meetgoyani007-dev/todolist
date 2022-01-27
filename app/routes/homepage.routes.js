@@ -10,7 +10,7 @@ module.exports = (app) => {
   router.put("/:id", [authJwt.verifyToken], homePageController.update);
 
   // Retrieve a single Quote with id
-  router.get("/:id", [authJwt.verifyToken], homePageController.findOne);
+  router.get("/:id", [authJwt.verifyToken], homePageController.findOneHome);
 
   app.use("/api/homepage-texts", router);
 };
