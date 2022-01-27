@@ -57,12 +57,12 @@ exports.findOneHome = (req, res) => {
 
   homePage
     .findOne({
-      attributes: [
-        { exclude: ["samachar_gujarat", "samachar_bharat", "samachar_videsh"] },
-      ],
+      attributes: {
+        exclude: ["samachar_gujarat", "samachar_bharat", "samachar_videsh"],
+      },
       where: {
-        id
-      }
+        id,
+      },
     })
     .then((data) => {
       const {
