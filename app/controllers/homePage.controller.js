@@ -15,9 +15,6 @@ exports.create = (req, res) => {
     !req.body.varshik_title ||
     !req.body.varshik_subtitle ||
     !req.body.varshik_image ||
-    !req.body.samachar_gujarat ||
-    !req.body.samachar_bharat ||
-    !req.body.samachar_videsh ||
     !req.body.bhagvan_img_url ||
     !req.body.mataji_img_url ||
     !req.body.sant_img_url ||
@@ -61,7 +58,8 @@ exports.findOne = (req, res) => {
   homePage
     .findByPk(id)
     .then((data) => {
-      res.send(data);
+      const {samachar_gujarat, samachar_bharat, samachar_videsh , ...otherData}
+      res.send(...otherData);
     })
     .catch((err) => {
       res.status(500).send({
