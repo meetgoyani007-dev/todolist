@@ -56,9 +56,21 @@ exports.findOne = (req, res) => {
   const id = req.params.id;
 
   homePage
-    .findByPk(id)
+    .findOne({
+      attributes: [
+        { exclude: ["samachar_gujarat", "samachar_bharat", "samachar_videsh"] },
+      ],
+      where: {
+        id
+      }
+    })
     .then((data) => {
-      const {samachar_gujarat, samachar_bharat, samachar_videsh , ...otherData} = data;
+      const {
+        samachar_gujarat,
+        samachar_bharat,
+        samachar_videsh,
+        ...otherData
+      } = data;
       res.send(data);
     })
     .catch((err) => {
