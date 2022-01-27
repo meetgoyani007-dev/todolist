@@ -59,7 +59,7 @@ exports.findOne = (req, res) => {
     .findByPk(id)
     .then((data) => {
       const {samachar_gujarat, samachar_bharat, samachar_videsh , ...otherData} = data;
-      res.send(...otherData);
+      res.send(data);
     })
     .catch((err) => {
       res.status(500).send({
