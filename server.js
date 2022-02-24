@@ -23,16 +23,13 @@ const Role = db.role;
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Hi there, welcome to this Rashifal." });
+  res.json({ message: "Hi there, welcome to this task app." });
 });
 
 // api routes
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
-require("./app/routes/dailyQuote.routes")(app);
-require("./app/routes/rashiFal.routes")(app);
-require("./app/routes/homepage.routes")(app);
-require("./app/routes/ads.routes")(app);
+require("./app/routes/task.routes")(app);
 
 // set port, listen for requests
 const PORT = config.PORT;

@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize, DataTypes) => {
-  const ads = sequelize.define(
-    "tbl_ads", // Model name
+  const Task = sequelize.define(
+    "tasks", // Model name
     {
       // Attributes
       id: {
@@ -8,18 +8,14 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      ad_id: {
+      description: {
         type: DataTypes.TEXT,
         unique: true,
       },
       status: {
         type: DataTypes.BOOLEAN,
         unique: true,
-      },
-      page_name: {
-        type: DataTypes.TEXT,
-        unique: true,
-      },
+      }
     },
     {
       // Options
@@ -30,5 +26,5 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
     }
   );
 
-  return ads;
+  return Task;
 };

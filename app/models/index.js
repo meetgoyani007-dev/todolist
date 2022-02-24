@@ -27,10 +27,7 @@ db.sequelize = sequelize;
 
 db.user = require("./user.model.js")(sequelize, Sequelize, DataTypes);
 db.role = require("./role.model.js")(sequelize, Sequelize, DataTypes);
-db.daily_quote = require("./dailyQuote.model")(sequelize, Sequelize, DataTypes);
-db.rashi_fal = require("./rashiFal.model")(sequelize, Sequelize, DataTypes);
-db.homepage_text = require("./homepage.model")(sequelize, Sequelize, DataTypes);
-db.ads = require("./ads.model")(sequelize, Sequelize, DataTypes);
+db.task = require("./tasks.model")(sequelize, Sequelize, DataTypes);
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
