@@ -17,7 +17,6 @@ exports.create = (req, res) => {
     description: req.body.description,
     status: req.body.status
   };
-
   // Save task in database
   task
     .create(quote)
