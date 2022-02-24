@@ -22,8 +22,5 @@ module.exports = {
   /** AUTH KEY */
   auth: {
     secret: "our-secret-key"
-  },
-
-  /** Rashifal divyabhaskar class name */
-  CLASS_NAME: process.env.divyaClassName
+  }
 };
