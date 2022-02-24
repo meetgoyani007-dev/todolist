@@ -1,5 +1,5 @@
 module.exports = (app) => {
-  const taskController = require("../controllers/dailyQuote.controller.js");
+  const taskController = require("../controllers/tasks.controller.js");
   const { verifySignUp, authJwt } = require("../middlewares");
 
   const router = require("express").Router();
