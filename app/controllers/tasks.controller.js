@@ -6,12 +6,9 @@ const Op = db.Op;
 exports.create = (req, res) => {
   // Validate request
   
-  if (!req.body["description"] || !req.body["status"]) {
+  if (req.body["description"].length == 0 || req.body["status"].length == 0) {
     res.status(400).send({
-      message: `task can not be empty!${
-        req.body["description"],
-        req.body["status"]
-      }`,
+      message: `task can not be empty!`,
     });
     return;
   }
