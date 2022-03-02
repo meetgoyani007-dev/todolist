@@ -14,13 +14,13 @@ exports.create = (req, res) => {
   }
 
   // Create a task
-  const task = {
+  const taskDetails = {
     description: req.body.description,
     status: req.body.status
   };
   // Save task in database
   task
-    .create(quote)
+    .create(taskDetails)
     .then((data) => {
       res.send(data);
     })
