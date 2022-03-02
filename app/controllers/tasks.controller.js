@@ -8,9 +8,7 @@ exports.create = (req, res) => {
   
   if (!req.body.description || !req.body.status) {
     res.status(400).send({
-      message: `task can not be empty! && ${
-        (JSON.stringify(req.body))
-      }`,
+      message: `task can not be empty! && ${req.body["description"]}`
     });
     return;
   }
