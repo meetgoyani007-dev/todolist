@@ -15,6 +15,9 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
       status: {
         type: DataTypes.BOOLEAN,
         unique: true,
+      },
+       user_id: {
+        type: DataTypes.INTEGER
       }
     },
     {
