@@ -16,7 +16,8 @@ exports.create = (req, res) => {
   // Create a task
   const taskDetails = {
     description: req.body.description,
-    status: req.body.status
+    status: req.body.status,
+    user_id: req.userId
   };
   // Save task in database
   task
@@ -51,7 +52,7 @@ exports.findOne = (req, res) => {
 exports.findAll = (req, res) => {
 
   task
-    .findAll()
+    .findAll({where: {"user_id": req.userId}})
     .then((data) => {
       res.send(data);
     })
